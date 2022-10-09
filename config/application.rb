@@ -23,6 +23,7 @@ module Phase4CookiesInRailsApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    # This is set in apps generated with the --api flag, and removes session/cookie middleware
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -36,7 +37,7 @@ module Phase4CookiesInRailsApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-
+    #must add this lines
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
